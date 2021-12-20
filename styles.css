@@ -30,7 +30,7 @@ a {
     color: #000;
 }
 
-span {
+.paragraph span {
     color: red;
     font-weight: 800;
 }
