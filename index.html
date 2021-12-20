@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Champs numéro de téléphone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/css/intlTelInput.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+
+    <h1>Champs numéro de téléphone</h1>
+    
+    <p style="margin-bottom: 20px;">Pour l'amiral dépositaire 😄, regarde bien le <span>index.html</span> nake</p>
+
+    <div>
+      <input type="text" id="phone" class="phone" />
+    </div>
+
+    <a target="_blank" href="https://github.com/jackocnr/intl-tel-input?utm_source=cdnjs&utm_medium=cdnjs_link&utm_campaign=cdnjs_library">Lien vers la documentation</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/intlTelInput.min.js"></script>
+    <script>
+        // Je sélectionne d'abord mon champs
+        const phoneElem = document.querySelector("#phone");
+
+
+        // ensuite je greffe le comportement 
+        
+        window.intlTelInput(phoneElem, {
+            initialCountry: 'SN',
+            nationalMode: true,
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.15/js/utils.min.js",
+            customPlaceholder: (selectedCountryPlaceholder, selectedCountryData) => `Exemple: ${selectedCountryPlaceholder}`,
+            localizedCountries: { sn: 'Sénégal' },
+            preferredCountries: [],
+        });
+   
+    </script>
+  </body>
+</html>
